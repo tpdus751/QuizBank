@@ -4,9 +4,13 @@ import java.io.IOException;
 
 import quizbank.controller.Controller;
 import quizbank.model.AlgorithmsQuizStorage;
+import quizbank.model.Cart;
+import quizbank.model.CartStorage;
 import quizbank.model.CustomerStorage;
 import quizbank.model.InterfaceQuizStorage;
 import quizbank.model.JavaQuizStorage;
+import quizbank.model.QuizCollection;
+import quizbank.model.QuizCollectionStorage;
 import quizbank.view.View;
 
 public class Test {
@@ -26,20 +30,17 @@ public class Test {
 		
 		InterfaceQuizStorage interfaceQuizStorage = new InterfaceQuizStorage();
 		
-		// 컨트롤러 생성
-		Controller controller = new Controller(view, customerStorage, javaQuizStorage, algorithmsQuizStorage, interfaceQuizStorage);
+		QuizCollectionStorage quizCollectionStorage = new QuizCollectionStorage();
 		
-				
-				
-				
-				
+		
+		CartStorage cartStorage = new CartStorage();
+		
+		
+		// 컨트롤러 생성
+		Controller controller = new Controller(view, customerStorage, javaQuizStorage, algorithmsQuizStorage, interfaceQuizStorage, quizCollectionStorage, cartStorage);
 				
 				
 		controller.start();
-				
-
-			
-
 	}
 
 }

@@ -3,10 +3,9 @@ package quizbank.model;
 public class Customer extends User {
 	
 	private int num;
-
 	
-	public Customer(int num, String name, String id, String password) {
-		super(name, id, password);
+	public Customer(int num, String name, String id, String password, String phoneNumber, String address, String email) {
+		super(name, id, password, phoneNumber, address, email);
 		this.num = num;
 	}
 
