@@ -18,6 +18,7 @@ public class AlgorithmsQuizStorage {
 	private String AlgorithmsQuizFilename = "AlgorithmsQuizList.txt";
 	private int lastNum;
 	private boolean isSaved;
+	View view = new View();
 	
 	public AlgorithmsQuizStorage() throws IOException {
 		loadBookListFromFile();		
@@ -101,7 +102,6 @@ public class AlgorithmsQuizStorage {
 
 
 		public void viewAllQuiz() {
-			View view = new View();
 			for (Quiz quiz : algorithmsQuizList) {
 				view.showMessage("----------------------------------");
 				System.out.println(quiz.getNum() + "번 : " + quiz.getQuizName());
@@ -127,9 +127,7 @@ public class AlgorithmsQuizStorage {
 	        Collections.shuffle(algorithmsQuizList);
 
 	        // 첫 번째 20개의 문제를 추출하여 출력
-	        View view = new View();
 	        Scanner input = new Scanner(System.in);
-	        ArrayList<String> submitList = new ArrayList<>();
 	        ArrayList<String> incorrectList = new ArrayList<>();
 	        int score = 0;
 	        int count = 0;
@@ -141,7 +139,6 @@ public class AlgorithmsQuizStorage {
 	            System.out.print("정답 : ");
 	            String submit = input.nextLine();
 	            if (submit.equals(quiz.getAnswer())) {
-	            	submitList.add(submit);
 	            	score += 5;
 	            } else {
 	            	incorrectList.add(quiz.getQuizName());

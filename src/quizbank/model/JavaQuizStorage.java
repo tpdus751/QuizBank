@@ -18,6 +18,7 @@ public class JavaQuizStorage {
 	private String JavaQuizFilename = "JavaQuizList.txt";
 	private int lastNum;
 	private boolean isSaved;
+	View view = new View();
 	
 	public JavaQuizStorage() throws IOException {
 		loadBookListFromFile();		
@@ -101,7 +102,6 @@ public class JavaQuizStorage {
 
 
 		public void viewAllQuiz() {
-			View view = new View();
 			for (Quiz quiz : javaQuizList) {
 				view.showMessage("----------------------------------");
 				System.out.println(quiz.getNum() + "번 : " + quiz.getQuizName());
@@ -127,7 +127,6 @@ public class JavaQuizStorage {
 	        Collections.shuffle(javaQuizList);
 
 	        // 첫 번째 20개의 문제를 추출하여 출력
-	        View view = new View();
 	        Scanner input = new Scanner(System.in);
 	        ArrayList<String> submitList = new ArrayList<>();
 	        ArrayList<String> incorrectList = new ArrayList<>();
