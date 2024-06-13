@@ -158,7 +158,7 @@ public class Controller {
 		int menu;
 		
 		if (cartStorage.getNumItems() == 0) {
-			view.showMessage(">> 장바구니가 비어 있습니다.");
+			view.showMessage("장바구니가 비어 있습니다.");
 		} else {
 			do {
 				view.displayCart(cartStorage);
@@ -181,7 +181,7 @@ public class Controller {
 				case 0:
 					break;
 				default :
-					view.showMessage(">> 잘못된 메뉴 번호입니다.");
+					view.showMessage("잘못된 메뉴 번호입니다.");
 				}
 				
 			} while (menu != 0);
